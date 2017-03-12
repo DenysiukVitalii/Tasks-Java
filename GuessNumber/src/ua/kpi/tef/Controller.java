@@ -22,14 +22,16 @@ public class Controller {
     public void processUser(){
         Scanner sc = new Scanner(System.in);
         int randNumber = model.rand();
-        int counter = 0;
+        int UPPER = 100;
+        int LOWER = 0;
+        int countOfAttempts = 0;
 
         Stack attempts = new Stack();
         LinkedList<Integer> range = new LinkedList<>();
 
         // range [1, 100]
-        range.addFirst(1);
-        range.addLast(100);
+        range.addFirst(LOWER);
+        range.addLast(UPPER);
 
         while(model.isCompare(randNumber, model.getValue()) != true) {
             model.setValue(inputIntValueWithScanner(sc));
@@ -45,7 +47,7 @@ public class Controller {
                 view.printMessage(view.UPPER_NUMBER + range);
             }
 
-            counter++;
+            countOfAttempts++;
 
             attempts.push(model.getValue());
         }
@@ -53,13 +55,13 @@ public class Controller {
         view.printMessage(view.CONGRATULATIONS);
         view.printMessage(view.SUMMARY);
         view.printMessage(view.GUESSED_NUMBER + model.getValue());
-        if (counter == 1) view.printMessage(view.ROBOT);
-        if (counter > 1 && counter <= 4) view.printMessage(view.BOSS);
-        if (counter > 4 && counter < 8) view.printMessage(view.MASTER);
-        if (counter >= 8 && counter < 12) view.printMessage(view.STUDENT);
-        if (counter >= 12 && counter <= 20) view.printMessage(view.PUPIL);
-        if (counter > 20) view.printMessage(view.LOSER);
-        view.printMessage(view.N_ATTEMPTS + counter);
+        if (countOfAttempts == 1) view.printMessage(view.ROBOT);
+        if (countOfAttempts > 1 && countOfAttempts <= 4) view.printMessage(view.BOSS);
+        if (countOfAttempts > 4 && countOfAttempts < 8) view.printMessage(view.MASTER);
+        if (countOfAttempts >= 8 && countOfAttempts < 12) view.printMessage(view.STUDENT);
+        if (countOfAttempts >= 12 && countOfAttempts <= 20) view.printMessage(view.PUPIL);
+        if (countOfAttempts > 20) view.printMessage(view.LOSER);
+        view.printMessage(view.N_ATTEMPTS + countOfAttempts);
         view.printMessage(view.ATTEMPTS + attempts);
     }
 
