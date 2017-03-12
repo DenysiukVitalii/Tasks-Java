@@ -34,7 +34,7 @@ public class Controller {
     // The Utility methods
     public String inputNameWithScanner(Scanner sc) {
         view.printMessage(view.INPUT_NAME);
-        while(! sc.hasNext(REGEX_NAME)) {
+        while( sc.hasNextInt() || sc.hasNextDouble()) {
              view.printMessage(view.WRONG_INPUT_NAME + '\n' + view.INPUT_NAME);
           sc.next();
          }
