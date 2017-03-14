@@ -20,6 +20,10 @@ public class Model {
     public String getName() {return name;}
     public String getSurname() {return surname;}
     public String getLastName() {return lastname;}
+    public String getNickname() {return nickname;}
+    public String getPhone() {return phone;}
+    public String getEmail() {return email;}
+    public String getCity() {return city;}
 
     public void setName(String value) {
         this.name = value;
