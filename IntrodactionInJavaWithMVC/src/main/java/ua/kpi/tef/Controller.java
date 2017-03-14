@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 
 public class Controller {
     // The Regex
-    public static final String REGEX_NAME = "^[a-zA-Z]*$";
+    public static final String REG_NAME = "^[A-ZА-Я]{1}[a-zа-я'-]{1,}$";
 
     // Constructor
     Model model;
@@ -26,23 +26,24 @@ public class Controller {
     public void processUser(){
         Scanner sc = new Scanner(System.in);
 
-        model.setValue(inputNameWithScanner(sc));
+        model.setValue(inputNameWithScanner(sc,REG_NAME));
 
         view.printNameAndHello(view.OUT_HELLO, model.getValue());
     }
 
     // The Utility methods
-    public String inputNameWithScanner(Scanner sc) {
+    public String inputNameWithScanner(Scanner sc, String reg) {
         view.printMessage(view.INPUT_NAME);
-        while( sc.hasNextInt() || sc.hasNextDouble()) {
+        String val = sc.next();
+        while( !checker(val, reg) ) {
              view.printMessage(view.WRONG_INPUT_NAME + '\n' + view.INPUT_NAME);
-          sc.next();
+            val = sc.next();
          }
-        return sc.next();
+        return val;
     }
 
-    public boolean checker(String check) {
-        Pattern pt = Pattern.compile(REGEX_NAME);
+    public boolean checker(String check, String reg) {
+        Pattern pt = Pattern.compile(reg);
         Matcher m = pt.matcher(check);
         return m.matches();
     }
