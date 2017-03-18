@@ -13,23 +13,26 @@ public class View {
     public static final String INPUT_INDEXPOST = "Input your index-post: ";
     public static final String INPUT_CITY = "Input your city: ";
     public static final String INPUT_STREET = "Input your street: ";
+    public static final String INPUT_HOUSE = "Input your number of house: ";
+    public static final String INPUT_APPARTMENT = "Input your number of appartment: ";
+    public static final String INPUT_IP = "Input your ip-adress: ";
+    public static final String INPUT_PASSWORD = "Input your password: ";
+    public static final String INPUT_BIRTHDAY = "Input your birthday: ";
+    public static final String INPUT_PASSPORT = "Input your passport: ";
+
 
     public static final String WRONG_INPUT = "Wrong input! Repeat please! ";
-    public static final String OUT_HELLO = "Hello, ";
 
     public void printMessage(String message){
         System.out.println(message);
     }
 
-    public void printNameAndHello(String message, String value1){
-        System.out.println(message + value1);
-    }
     public void printFullName(String name, String surname){
         String first = name.split("")[0];
         System.out.println(surname + " " + first + ".");
     }
 
-    public void printContactBook(String name, String surname){
-
+    public void printAddress(String index, String city, String street, String house, String appartment){
+        System.out.println(index + ", " + city + ", " + street + ", " + house + ", ap. " + appartment);
     }
 }
