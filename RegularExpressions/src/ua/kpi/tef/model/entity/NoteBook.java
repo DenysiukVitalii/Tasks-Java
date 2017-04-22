@@ -1,9 +1,9 @@
-package ua.kpi.tef;
+package ua.kpi.tef.model.entity;
 
 /**
- * Created by Віталій on 12.03.2017.
+ * Created by Віталій on 21.03.2017.
  */
-public class Model {
+public class NoteBook {
     private String name;
     private String surname;
     private String lastname;
@@ -60,15 +60,11 @@ public class Model {
     public void setCity(String value) {
         this.city = value;
     }
-    public void setStreet(String value) {
-        this.street = value;
-    }
+    public void setStreet(String value) { this.street = value;}
     public void setHouse(String value) {
         this.house = value;
     }
-    public void setAppartment(String value) {
-        this.appartment = value;
-    }
+    public void setAppartment(String value) {this.appartment = value;}
     public void setIP(String value) {
         this.ip = value;
     }
@@ -82,4 +78,12 @@ public class Model {
         this.birthday = value;
     }
 
+    public String printSurnameAndName() {
+        String name = this.name.split("")[0];
+        return this.surname + ' ' + name + '.';
+    }
+
+    public String printAddress() {
+        return this.indexPost + ", " + this.city + ", " + this.street + " st., " + this.house + ", ap. " + this.appartment;
+    }
 }

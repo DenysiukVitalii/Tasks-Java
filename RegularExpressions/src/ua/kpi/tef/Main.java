@@ -1,5 +1,9 @@
 package ua.kpi.tef;
 
+import ua.kpi.tef.controller.Controller;
+import ua.kpi.tef.model.Model;
+import ua.kpi.tef.view.View;
+
 public class Main {
 
     public static void main(String[] args) {

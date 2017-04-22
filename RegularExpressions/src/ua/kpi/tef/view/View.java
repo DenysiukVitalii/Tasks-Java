@@ -1,4 +1,4 @@
-package ua.kpi.tef;
+package ua.kpi.tef.view;
 
 /**
  * Created by Віталій on 12.03.2017.
@@ -27,12 +27,4 @@ public class View {
         System.out.println(message);
     }
 
-    public void printFullName(String name, String surname){
-        String first = name.split("")[0];
-        System.out.println(surname + " " + first + ".");
-    }
-
-    public void printAddress(String index, String city, String street, String house, String appartment){
-        System.out.println(index + ", " + city + ", " + street + ", " + house + ", ap. " + appartment);
-    }
 }
